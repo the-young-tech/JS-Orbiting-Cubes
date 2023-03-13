@@ -19,27 +19,9 @@ function draw() {
 
     let boxSize = 50;
     let gap = 0;
-
-    // Draw second cube
+    
     push();
-    translate(-400, 0, 0); // shift the second cube to the left
-    for (let i = 0; i < 3; i++) {
-        for (let j = 0; j < 3; j++) {
-            for (let k = 0; k < 3; k++) {
-                push();
-                translate((i - 1) * (boxSize + gap), (j - 1) * (boxSize + gap), (k - 1) * (boxSize + gap));
-                let colorIndex = getColorIndex(i, j, k);
-                fill(colors[colorIndex]);
-                box(boxSize);
-                pop();
-            }
-        }
-    }
-    pop();
-
-    // Draw third cube
-    push();
-    translate(400, 0, 0); // shift the third cube to the right
+    translate(-400, 0, 0);
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             for (let k = 0; k < 3; k++) {
@@ -55,7 +37,7 @@ function draw() {
     pop();
 
     push();
-    translate(0, 400, 0); // shift the third cube to the right
+    translate(400, 0, 0); 
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             for (let k = 0; k < 3; k++) {
@@ -71,7 +53,7 @@ function draw() {
     pop();
 
     push();
-    translate(0, 0, 400); // shift the third cube to the right
+    translate(0, 400, 0);
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             for (let k = 0; k < 3; k++) {
@@ -87,7 +69,7 @@ function draw() {
     pop();
 
     push();
-    translate(0, 0, -400); // shift the third cube to the right
+    translate(0, 0, 400);
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             for (let k = 0; k < 3; k++) {
@@ -103,7 +85,23 @@ function draw() {
     pop();
 
     push();
-    translate(0, -400, 0); // shift the third cube to the right
+    translate(0, 0, -400);
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            for (let k = 0; k < 3; k++) {
+                push();
+                translate((i - 1) * (boxSize + gap), (j - 1) * (boxSize + gap), (k - 1) * (boxSize + gap));
+                let colorIndex = getColorIndex(i, j, k);
+                fill(colors[colorIndex]);
+                box(boxSize);
+                pop();
+            }
+        }
+    }
+    pop();
+
+    push();
+    translate(0, -400, 0);
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             for (let k = 0; k < 3; k++) {
