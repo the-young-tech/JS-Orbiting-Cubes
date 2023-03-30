@@ -8,8 +8,25 @@ let cubeState = {
     bottom: [['w', 'y', 'y'], ['b', 'w', 'r'], ['o', 'g', 'r']]
 };
 
+function getColorIndex() {
+    return Math.floor(Math.random() * colors.length);
+}
+
 function setup() {
     createCanvas(windowWidth, windowHeight, WEBGL);
+
+    let title = createElement("h1", "Welcome To My Website");
+    title.style("color", "#ff0000");
+    title.style("text-shadow", "2px 3px 3px #ffffff")
+    title.style("font-size", "45px");
+    title.style("word-spacing", "12px")
+    title.style("font-family", 'Almendra SC')
+    title.style("text-align", "center");
+    title.style("position", "absolute");
+    title.style("top", "45%");
+    title.style("left", "50%");
+    title.style("transform", "translate(-50%, -400%)");
+
 }
 
 function draw() {
@@ -19,7 +36,8 @@ function draw() {
 
     let boxSize = 50;
     let gap = 0;
-    
+
+    // First
     push();
     translate(-400, 0, 0);
     for (let i = 0; i < 3; i++) {
@@ -36,14 +54,15 @@ function draw() {
     }
     pop();
 
+    // Second 
     push();
-    translate(400, 0, 0); 
+    translate(400, 0, 0);
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             for (let k = 0; k < 3; k++) {
                 push();
                 translate((i - 1) * (boxSize + gap), (j - 1) * (boxSize + gap), (k - 1) * (boxSize + gap));
-                let colorIndex = getColorIndex(i, j, k);
+                let colorIndex = getColorIndex(k, i, j);
                 fill(colors[colorIndex]);
                 box(boxSize);
                 pop();
@@ -52,6 +71,7 @@ function draw() {
     }
     pop();
 
+    // Third
     push();
     translate(0, 400, 0);
     for (let i = 0; i < 3; i++) {
@@ -59,7 +79,7 @@ function draw() {
             for (let k = 0; k < 3; k++) {
                 push();
                 translate((i - 1) * (boxSize + gap), (j - 1) * (boxSize + gap), (k - 1) * (boxSize + gap));
-                let colorIndex = getColorIndex(i, j, k);
+                let colorIndex = getColorIndex(j, k, i);
                 fill(colors[colorIndex]);
                 box(boxSize);
                 pop();
@@ -68,6 +88,7 @@ function draw() {
     }
     pop();
 
+    // Fourth
     push();
     translate(0, 0, 400);
     for (let i = 0; i < 3; i++) {
@@ -75,7 +96,7 @@ function draw() {
             for (let k = 0; k < 3; k++) {
                 push();
                 translate((i - 1) * (boxSize + gap), (j - 1) * (boxSize + gap), (k - 1) * (boxSize + gap));
-                let colorIndex = getColorIndex(i, j, k);
+                let colorIndex = getColorIndex(i, k, j);
                 fill(colors[colorIndex]);
                 box(boxSize);
                 pop();
@@ -84,6 +105,7 @@ function draw() {
     }
     pop();
 
+    // Fifth
     push();
     translate(0, 0, -400);
     for (let i = 0; i < 3; i++) {
@@ -91,7 +113,7 @@ function draw() {
             for (let k = 0; k < 3; k++) {
                 push();
                 translate((i - 1) * (boxSize + gap), (j - 1) * (boxSize + gap), (k - 1) * (boxSize + gap));
-                let colorIndex = getColorIndex(i, j, k);
+                let colorIndex = getColorIndex(k, j, i);
                 fill(colors[colorIndex]);
                 box(boxSize);
                 pop();
@@ -100,6 +122,7 @@ function draw() {
     }
     pop();
 
+    // Sixth
     push();
     translate(0, -400, 0);
     for (let i = 0; i < 3; i++) {
@@ -107,7 +130,7 @@ function draw() {
             for (let k = 0; k < 3; k++) {
                 push();
                 translate((i - 1) * (boxSize + gap), (j - 1) * (boxSize + gap), (k - 1) * (boxSize + gap));
-                let colorIndex = getColorIndex(i, j, k);
+                let colorIndex = getColorIndex(j, i, k);
                 fill(colors[colorIndex]);
                 box(boxSize);
                 pop();
