@@ -3,3 +3,6 @@ Orbiting Rubiks Cubes written with just JavaScript and used on my personal websi
 
 
 ![cubes](https://user-images.githubusercontent.com/123611980/224591301-b4557403-7783-4792-b51a-bfc80708ae0e.png)
+
+
+![Screenshot 2023-03-12 214954](https://user-images.githubusercontent.com/123611980/224597616-501dc1ee-0e78-4e58-8393-9232419089df.png)
